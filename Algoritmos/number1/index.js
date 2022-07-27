@@ -3,6 +3,14 @@ esarrolle  un  algoritmo  que  permita  leer  tres  valores  y  almacenarlos  en
 El algoritmo  debe imprimir cual  es el mayor  y cual es el menor.
 Recuerde  constatar  que los tres valores introducidos por el teclado sean valores distintos.
 Presente un mensaje de alerta en caso de que se detecte la introducción de valores iguales. 
+
+---------------------------------------------------------------------------------
+https://www.udocz.com/apuntes/256411/ejercicios-resueltos
+---------------------------------------------------------------------------------
+
+
+
+
 */
 const a = 24;
 const b = 456;
