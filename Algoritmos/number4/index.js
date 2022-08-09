@@ -2,7 +2,7 @@
  * Dado un listado de números, encuentra el SEGUNDO más grande.
     https://retosdeprogramacion.com/semanales2022
  */
-const numberList = [3,54,13,66,95,1];
+const numberList = [3,54,13,66,95,1,665,48978764];
 
 function secBigName(list) {
     let bigNumber = 0;
