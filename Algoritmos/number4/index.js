@@ -3,16 +3,27 @@
     https://retosdeprogramacion.com/semanales2022
  */
 const numberList = [3,54,13,66,95,1];
-let bigNumber = 0;
-let secondBigNumber = 0;
 
-for (let i = 0; i < numberList.length ;i++){
-    if(numberList[i] > numberList[i+1]){
-        bigNumber = numberList[i];
-    } else if(numberList[i] < numberList[i+1]) {
-        bigNumber = numberList[i+1];
+function secBigName(list) {
+    let bigNumber = 0;
+    let secondBigNumber = 0;
+    for (let i = 0; i < list.length ;i++){
+        if(list[i] > list[i+1]){
+            bigNumber = list[i];
+        } else if(list[i] < list[i+1]) {
+            bigNumber = list[i+1];
+        }
+    }
+    const result = list.filter((element) => element !== bigNumber);
+    for (let index = 0; index < result.length; index++) {
+        if (result[index] > result[index+1]) {
+            secondBigNumber = result[index];
+        } else if (result[index] < result[index+1]) {
+            secondBigNumber = result[index+1]
+        }
     }
 }
+secBigName(numberList)
 
 console.log('number big--'+bigNumber);
 console.log('number second--'+secondBigNumber);
