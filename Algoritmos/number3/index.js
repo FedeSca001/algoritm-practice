@@ -1,7 +1,7 @@
 /*
 Crear una lista con los caracteres de un texto, en lugar de los espacios colocar un "*"
 */
-const text = "Déjame ver que hay para saborear esta vuelta La carta no está siempre a tu alcance en los matutinos"
+const text = "Déjame ver           que hay para saborear esta vuelta La carta no está siempre a tu alcance en los matutinos"
 
 const list = [];
 
