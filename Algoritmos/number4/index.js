@@ -22,8 +22,6 @@ function secBigName(list) {
             secondBigNumber = result[index+1]
         }
     }
+    console.log('number second--'+secondBigNumber);
 }
 secBigName(numberList)
-
-console.log('number big--'+bigNumber);
-console.log('number second--'+secondBigNumber);
