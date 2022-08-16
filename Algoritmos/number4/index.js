@@ -4,6 +4,7 @@
  */
 const numberList = [3,54,13,66,95,1,665,48978764];
 
+/*
 function secBigName(list) {
     let bigNumber = 0;
     let secondBigNumber = 0;
@@ -24,4 +25,13 @@ function secBigName(list) {
     }
     console.log('number second--'+secondBigNumber);
 }
-secBigName(numberList)
+secBigName(numberList)*/
+/*
+METODO SORT
+*/
+
+function sortMethod(list) {
+    list = list.sort((n1,n2)=>{n2 - n1});
+    console.log(list[1]);
+}
+sortMethod(numberList)
