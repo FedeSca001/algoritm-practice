@@ -1,4 +1,4 @@
-const input = 231
+const input = 84
 const results = [input];
 //La conjetura de Collatz
 //Si el número es par se divide en 2.

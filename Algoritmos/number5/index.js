@@ -16,12 +16,13 @@ const ciclos = [];
 
 function cicloSexagenario(el, an){
     for (let i = 0; i <= 60; i++){
+        const iterElemento = 0;
         ciclos.push({
-            elemento: el[i],
-            animal: an[i] 
+                elemento: el[iterElemento],
+                animal: an[i],
         });
+        console.log(iterElemento);
+        iterElemento > 5 ? iterElemento = 0 : iterElemento++;
     }
-    console.log(ciclos);
 }
-
-cicloSexagenario(elementos, animales)
+cicloSexagenario(elementos, animales);
