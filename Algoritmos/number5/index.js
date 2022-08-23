@@ -1,11 +1,21 @@
 /*
- * Enunciado: Crea un función, que dado un año, indique el elemento
- * y animal correspondiente en el ciclo sexagenario del zodíaco chino.
- * - Info: https://www.travelchinaguide.com/intro/astrology/60year-cycle.htm
- * - El ciclo sexagenario se corresponde con la combinación de los elementos
- *   madera, fuego, tierra, metal, agua y los animales rata, buey, tigre,
- *   conejo, dragón, serpiente, caballo, oveja, mono, gallo, perro, cerdo
- *   (en este orden).
- * - Cada elemento se repite dos años seguidos.
- * - El último ciclo sexagenario comenzó en 1984 (Madera Rata).
+ * Enunciado: Dado un array de enteros ordenado y sin repetidos, 
+ * crea una función que calcule y retorne todos los que faltan entre
+ * el mayor y el menor.
+ * - Lanza un error si el array de entrada no es correcto.
  */
+
+const arrinput = [1,5,6,7,9,15,16,19];
+
+function complete() {
+    const contador = 0;
+    for (let i = 0; i < arrinput.length; i++) {
+        const element = arrinput[i];
+        if (element !== arrinput[i+1]-1) {
+            console.log('no es asi'+ element);
+        }
+    }
+    console.log('faltan -'+ contador+'-numeros intermedios');
+}
+
+complete();
