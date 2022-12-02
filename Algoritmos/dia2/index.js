@@ -13,21 +13,22 @@ Así que sólo tienes que preocuparte de los días festivos que caen en esos dí
 Dado un año y un array con las fechas de los días festivos,
 devuelve el número de horas extra que se harían ese año:
 */
-const Yr = 2022;
-const H = ["01/06", "04/02", "12/25", "05/01"]; // formato MM/DD
+const Yr = 2023;
+const H = ["01/06", "04/01", "12/25"]; // formato MM/DD
 
 function countHours(year, holidays) {
-        let countLaboral = Number(holidays.length);
+        let countLaboral = 0;
         let countHoliDays = 0;
         for (strg of holidays) {
                 let stringMonth = `${strg[0]}${strg[1]}`;
                 let stringDay = `${strg[3]}${strg[4]}`;
                 const fechaComoCadena = `${year}-${stringMonth}-${stringDay}`;
                 const numeroDia = new Date(fechaComoCadena).getDay();
-                numeroDia === 0 || numeroDia === 6 ? countHoliDays++ : countLaboral ++
-                console.log('numero dia -',numeroDia,'  - countHoliday',countHoliDays);
+                numeroDia === 0 || numeroDia === 6
+                        ? countLaboral++
+                        : countHoliDays++;
         }
         let totalHoursYear = countHoliDays * 2;
-        console.log(`El total de horas extras son: ${totalHoursYear}`);
+        console.log(totalHoursYear,'-- counthokiday -  ',countHoliDays);
 }
 countHours(Yr, H);
