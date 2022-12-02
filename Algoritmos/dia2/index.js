@@ -29,6 +29,6 @@ function countHours(year, holidays) {
                         : countHoliDays++;
         }
         let totalHoursYear = countHoliDays * 2;
-        console.log(totalHoursYear,'-- counthokiday -  ',countHoliDays);
+        return totalHoursYear;
 }
 countHours(Yr, H);
