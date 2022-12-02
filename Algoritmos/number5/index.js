@@ -5,17 +5,18 @@
  * - Lanza un error si el array de entrada no es correcto.
  */
 
-const arrinput = [1,5,6,7,9,15,16,19];
-
+const arrinput = [3,5,6,7,9,15,16,19];
+let newArr = [];
 function complete() {
-    const contador = 0;
-    for (let i = 0; i < arrinput.length; i++) {
-        const element = arrinput[i];
-        if (element !== arrinput[i+1]-1) {
-            console.log('no es asi'+ element);
+    for (let i = 0; i < arrinput[arrinput.length-1]; i++) {
+        if (arrinput[i] === arrinput[i + 1] - 1) {
+            console.log('bien');
+        } else {
+            newArr = arrinput.splice(i+1,0, arrinput[i]+1)
+            console.log(arrinput[i] + 1+'--arrinm +1');
         }
     }
-    console.log('faltan -'+ contador+'-numeros intermedios');
+    console.log(newArr);
 }
 
 complete();
