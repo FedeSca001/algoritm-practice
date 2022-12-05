@@ -22,19 +22,13 @@ function distributeGifts(packOfGifts, reindeers) {
                 const letrasDePalabra = palabra.length;
                 sumatoriaGits += letrasDePalabra;
         }
-        //console.log("suma de letras regalo ---", sumatoriaGits);
         let sumatoriaRenos = 0;
         for (reno of reindeers) {
                 const letrasDeReno = reno.length * 2;
                 sumatoriaRenos += letrasDeReno;
-                //console.log('letras de renos por dos --',letrasDeReno);
         }
         const numeroDeEntrega = Math.trunc(sumatoriaRenos / sumatoriaGits);
-        return numeroDeEntrega;
+        console.log(numeroDeEntrega);
 }
-
-// el pack de regalos pesa 4 + 4 + 4 = 12
-// los renos pueden llevar (2 * 6) + (2 * 6) = 24
-// por lo tanto, Santa Claus puede entregar 2 cajas de regalos
 
 distributeGifts(packOfGifts, reindeers); // 2
