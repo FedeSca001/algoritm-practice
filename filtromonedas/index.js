@@ -1,11 +1,10 @@
-const readline = require("readline");
+/*const readline = require("readline");
 const rl = readline.createInterface({ input: process.stdin });
-/*process.stdin.on("data", (c) => {
+
+process.stdin.on("data", (c) => {
 
     console.log(String(c),String(b));
 });
-*/
-
 
 
 let n = false;
@@ -22,4 +21,20 @@ rl.on("line", (w) => {
                         w.substr(w.length - 1, 1);
         }
         console.log(w);
+});*/
+
+const readline = require("readline");
+const rl = readline.createInterface({ input: process.stdin });
+
+const contenedorMonedas = [];
+let n = false;
+rl.on("line", (w) => {
+        if (n == false) {
+                n = Number(w);
+                return;
+        }
+        contenedorMonedas.push(Number(w));
+        if (contenedorMonedas.length == n){
+            console.log(contenedorMonedas);
+        }
 });
