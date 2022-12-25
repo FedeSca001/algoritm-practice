@@ -36,13 +36,13 @@ rl.on("line", (w) => {
         contenedorMonedas.push(Number(w));
         if (contenedorMonedas.length == n) {
                 let contenedorPequeño = [0];
+                let resto = 0;
                 contenedorMonedas
                         .sort(function (a, b) {
                                 return a - b;
                         })
                         .reverse(); //ordeno el array de mas a menos
-
-                if (
+                while (
                         Number(
                                 contenedorPequeño[contenedorPequeño.length - 1]
                         ) < 5
@@ -50,15 +50,17 @@ rl.on("line", (w) => {
                         //sumar el primer elemento de contenedorMonedas + ultimo elemento de contPequeño
                         contenedorPequeño[contenedorPequeño.length - 1] +=
                                 contenedorMonedas[0];
-                        console.log(
-                                "ver cont pequeño",
-                                Number(contenedorPequeño)
-                        );
-                        //contenedorMonedas.shift();
-                } else {
-                        console.log("no va por el if");
+                        contenedorMonedas.shift();
+                        if (
+                                Number(
+                                        contenedorPequeño[
+                                                contenedorPequeño.length - 1
+                                        ]
+                                ) >= 5
+                        ) {
+                                contenedorPequeño.push(Number(0));
+                        }
                 }
-                //contenedorPequeño.push("0");
 
                 console.log("Ordenado + reverse  --", contenedorMonedas);
         }
