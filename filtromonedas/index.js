@@ -37,29 +37,13 @@ rl.on("line", (w) => {
         if (contenedorMonedas.length == n) {
                 let contenedorPequeño = [0];
                 let resto = 0;
-                contenedorMonedas
-                        .sort(function (a, b) {
-                                return a - b;
-                        })
-                        .reverse(); //ordeno el array de mas a menos
-                while (
-                        Number(
-                                contenedorPequeño[contenedorPequeño.length - 1]
-                        ) < 5
-                ) {
+                contenedorMonedas.sort(function (a, b) {return a - b;}).reverse(); //ordeno el array de mas a menos
+                while (Number(contenedorPequeño[contenedorPequeño.length - 1]) < 5) {
                         //sumar el primer elemento de contenedorMonedas + ultimo elemento de contPequeño
-                        contenedorPequeño[contenedorPequeño.length - 1] +=
-                                contenedorMonedas[0];
+                        contenedorPequeño[contenedorPequeño.length - 1] += contenedorMonedas[0];
                         contenedorMonedas.shift();
-                        console.log('vuelta por el while', contenedorMonedas);
-                        if (
-                                Number(
-                                        contenedorPequeño[
-                                                contenedorPequeño.length - 1
-                                        ]
-                                ) >= 5
-                        ) {
-                                return contenedorPequeño.push(Number(0));
+                        if (Number(contenedorPequeño[contenedorPequeño.length - 1]) >= 5) {
+                                contenedorPequeño.push(Number(0));
                         }
                 }
         }
