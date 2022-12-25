@@ -44,7 +44,9 @@ rl.on("line", (w) => {
                         .reverse();
                 console.log("Ordenado + reverse  --", contenedorMonedas);
                 Number(contenedorPequeño[contenedorPequeño.length - 1]) === 5
-                        ? console.log("yes")
-                        : console.log("no");
+                        ? contenedorPequeño.push("0")
+                        : contenedorMonedas.forEach((e) => {
+                                  console.log("cada elemento -- ", e);
+                          });
         }
 });
