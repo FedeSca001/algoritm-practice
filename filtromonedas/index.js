@@ -42,16 +42,20 @@ rl.on("line", (w) => {
                         })
                         .reverse(); //ordeno el array de mas a menos
                 // bucle (contenedorMonedas > 0 && contenedorPequeño[contenedorPequeño.length-1]===5)
-                while (contenedorMonedas.length > 0) {
-                        Number(
-                                contenedorPequeño[contenedorPequeño.length - 1]
-                        ) === 5
-                                ? contenedorPequeño.push("0")
-                                : contenedorMonedas.forEach((e) => {
-                                          console.log("cada elemento -- ", e);
-                                  });
-                        contenedorMonedas.shift();
-                }
+                Number(contenedorPequeño[contenedorPequeño.length - 1]) < 5
+                        ? () => {
+                                  //sumar el primer elemento de contenedorMonedas + primer elemento de contPequeño
+                                  contenedorPequeño[
+                                          contenedorPequeño.length - 1
+                                  ] += contenedorMonedas[0];
+                                  console.log(
+                                          "hacer algo ver cont pequeño",
+                                          contenedorPequeño
+                                  );
+                                  contenedorMonedas.shift();
+                          }
+                        : console.log("va por acá"); //contenedorPequeño.push("0");
+
+                console.log("Ordenado + reverse  --", contenedorMonedas);
         }
-        console.log("Ordenado + reverse  --", contenedorMonedas);
 });
