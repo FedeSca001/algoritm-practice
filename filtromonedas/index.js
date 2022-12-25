@@ -38,13 +38,11 @@ rl.on("line", (w) => {
                 let contenedorPequeño = [0];
                 let resto = 0;
                 contenedorMonedas.sort(function (a, b) {return a - b;}).reverse(); //ordeno el array de mas a menos
-                while (Number(contenedorPequeño[contenedorPequeño.length - 1]) < 5) {
-                        //sumar el primer elemento de contenedorMonedas + ultimo elemento de contPequeño
-                        contenedorPequeño[contenedorPequeño.length - 1] += contenedorMonedas[0];
-                        contenedorMonedas.shift();
-                        if (Number(contenedorPequeño[contenedorPequeño.length - 1]) >= 5) {
-                                contenedorPequeño.push(Number(0));
-                        }
+                while (Number(contenedorPequeño[contenedorPequeño.length - 1]) < 5) {//bucle (si el ultimo numero de contpequeño) es menor a 5
+                        contenedorPequeño[contenedorPequeño.length - 1] += contenedorMonedas[0] < 5 
+                                ?contenedorPequeño[contenedorPequeño.length - 1] += contenedorMonedas[0]//sumar el primer elemento de contenedorMonedas + ultimo elemento de contPequeño
+                                : contenedorPequeño.push(Number(0));
+                        contenedorMonedas.shift();//elimina el elemento que se envio al contpequeño
                 }
         }
 });
