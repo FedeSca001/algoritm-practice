@@ -35,18 +35,23 @@ rl.on("line", (w) => {
         }
         contenedorMonedas.push(Number(w));
         if (contenedorMonedas.length == n) {
-                console.log("Contenedor monedas --", contenedorMonedas);
-                let contenedorPequeño = ["2"];
+                let contenedorPequeño = ["0"];
                 contenedorMonedas
                         .sort(function (a, b) {
                                 return a - b;
                         })
-                        .reverse();
-                console.log("Ordenado + reverse  --", contenedorMonedas);
-                Number(contenedorPequeño[contenedorPequeño.length - 1]) === 5
-                        ? contenedorPequeño.push("0")
-                        : contenedorMonedas.forEach((e) => {
-                                  console.log("cada elemento -- ", e);
-                          });
+                        .reverse(); //ordeno el array de mas a menos
+                // bucle (contenedorMonedas > 0 && contenedorPequeño[contenedorPequeño.length-1]===5)
+                while (contenedorMonedas.length > 0) {
+                        Number(
+                                contenedorPequeño[contenedorPequeño.length - 1]
+                        ) === 5
+                                ? contenedorPequeño.push("0")
+                                : contenedorMonedas.forEach((e) => {
+                                          console.log("cada elemento -- ", e);
+                                  });
+                        contenedorMonedas.shift();
+                }
         }
+        console.log("Ordenado + reverse  --", contenedorMonedas);
 });
