@@ -35,26 +35,30 @@ rl.on("line", (w) => {
         }
         contenedorMonedas.push(Number(w));
         if (contenedorMonedas.length == n) {
-                let contenedorPequeño = ["0"];
+                let contenedorPequeño = [0];
                 contenedorMonedas
                         .sort(function (a, b) {
                                 return a - b;
                         })
                         .reverse(); //ordeno el array de mas a menos
-                // bucle (contenedorMonedas > 0 && contenedorPequeño[contenedorPequeño.length-1]===5)
-                Number(contenedorPequeño[contenedorPequeño.length - 1]) < 5
-                        ? () => {
-                                  //sumar el primer elemento de contenedorMonedas + primer elemento de contPequeño
-                                  contenedorPequeño[
-                                          contenedorPequeño.length - 1
-                                  ] += contenedorMonedas[0];
-                                  console.log(
-                                          "hacer algo ver cont pequeño",
-                                          contenedorPequeño
-                                  );
-                                  contenedorMonedas.shift();
-                          }
-                        : console.log("va por acá"); //contenedorPequeño.push("0");
+
+                if (
+                        Number(
+                                contenedorPequeño[contenedorPequeño.length - 1]
+                        ) < 5
+                ) {
+                        //sumar el primer elemento de contenedorMonedas + ultimo elemento de contPequeño
+                        contenedorPequeño[contenedorPequeño.length - 1] +=
+                                contenedorMonedas[0];
+                        console.log(
+                                "ver cont pequeño",
+                                Number(contenedorPequeño)
+                        );
+                        //contenedorMonedas.shift();
+                } else {
+                        console.log("no va por el if");
+                }
+                //contenedorPequeño.push("0");
 
                 console.log("Ordenado + reverse  --", contenedorMonedas);
         }
