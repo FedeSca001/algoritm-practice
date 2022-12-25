@@ -21,7 +21,7 @@ const maxCities = 3;
 function getMaxGifts(giftsCities, maxGifts, maxCities) {
         if (maxGifts >= 1 && giftsCities.length >= 1 && maxCities >= 1) {
                 if (Math.max(...giftsCities) < maxGifts) {
-                        console.log('puedo');
+                        console.log(Math.max(...giftsCities));
                 }
                 let sumaRegalos = 0;
                 return sumaRegalos;
