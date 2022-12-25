@@ -34,7 +34,17 @@ rl.on("line", (w) => {
                 return;
         }
         contenedorMonedas.push(Number(w));
-        if (contenedorMonedas.length == n){
-            console.log(contenedorMonedas);
+        if (contenedorMonedas.length == n) {
+                console.log("Contenedor monedas --", contenedorMonedas);
+                let contenedorPequeño = ["2"];
+                contenedorMonedas
+                        .sort(function (a, b) {
+                                return a - b;
+                        })
+                        .reverse();
+                console.log("Ordenado + reverse  --", contenedorMonedas);
+                Number(contenedorPequeño[contenedorPequeño.length - 1]) === 5
+                        ? console.log("yes")
+                        : console.log("no");
         }
 });
