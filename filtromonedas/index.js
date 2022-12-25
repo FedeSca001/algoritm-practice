@@ -51,6 +51,7 @@ rl.on("line", (w) => {
                         contenedorPequeño[contenedorPequeño.length - 1] +=
                                 contenedorMonedas[0];
                         contenedorMonedas.shift();
+                        console.log('vuelta por el while', contenedorMonedas);
                         if (
                                 Number(
                                         contenedorPequeño[
@@ -58,10 +59,8 @@ rl.on("line", (w) => {
                                         ]
                                 ) >= 5
                         ) {
-                                contenedorPequeño.push(Number(0));
+                                return contenedorPequeño.push(Number(0));
                         }
                 }
-
-                console.log("Ordenado + reverse  --", contenedorMonedas);
         }
 });
