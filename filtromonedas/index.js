@@ -36,13 +36,18 @@ rl.on("line", (w) => {
         contenedorMonedas.push(Number(w));
         if (contenedorMonedas.length == n) {
                 let contenedorPequeño = [0];
-                let resto = 0;
-                contenedorMonedas.sort(function (a, b) {return a - b;}).reverse(); //ordeno el array de mas a menos
-                while (Number(contenedorPequeño[contenedorPequeño.length - 1]) < 5) {//bucle (si el ultimo numero de contpequeño) es menor a 5
-                        contenedorPequeño[contenedorPequeño.length - 1] += contenedorMonedas[0] < 5 
-                                ?contenedorPequeño[contenedorPequeño.length - 1] += contenedorMonedas[0]//sumar el primer elemento de contenedorMonedas + ultimo elemento de contPequeño
-                                : contenedorPequeño.push(Number(0));
-                        contenedorMonedas.shift();//elimina el elemento que se envio al contpequeño
-                }
+                contenedorMonedas.sort(function (a, b) {return a - b;}).reverse() //ordeno el array de mas a menos
+                .forEach(e => {
+                        if (Number(contenedorPequeño[contenedorPequeño.length - 1] += e) > 5) {
+                                contenedorPequeño.push(Number(0))
+                                contenedorPequeño[contenedorPequeño.length - 1] += e
+                                console.log('yes if',contenedorPequeño[contenedorPequeño.length - 1] += e);
+                        } else {
+                                contenedorPequeño[contenedorPequeño.length - 1] += e//sumar el primer elemento de contenedorMonedas + ultimo elemento de contPequeño
+                                console.log('no if');
+                        }
+                        contenedorMonedas.shift();//elimina el elemento que se envio al contpequeño       
+                });
+                console.log('log final',contenedorPequeño);
         }
 });
