@@ -38,13 +38,13 @@ rl.on("line", (w) => {
                 let contenedorPequeño = [0];
                 contenedorMonedas.sort(function (a, b) {return a - b;}).reverse() //ordeno el array de mas a menos
                 .forEach(e => {
-                        if (Number(contenedorPequeño[contenedorPequeño.length - 1] += e) > 5) {
-                                contenedorPequeño.push(Number(0))
-                                contenedorPequeño[contenedorPequeño.length - 1] += e
-                                console.log('yes if',contenedorPequeño[contenedorPequeño.length - 1] += e);
+                        if (contenedorPequeño[contenedorPequeño.length - 1] += e < 5) {
+                                console.log('hacer push a contpequeño -- sumar elemnto mas contpequeño[ultimo]');
+                                contenedorPequeño.push(0)
+                                contenedorPequeño[contenedorPequeño.length - 1] += e;
                         } else {
-                                contenedorPequeño[contenedorPequeño.length - 1] += e//sumar el primer elemento de contenedorMonedas + ultimo elemento de contPequeño
-                                console.log('no if');
+                                console.log('sumar elemnto mas contpequeño[ultimo]');
+                                contenedorPequeño[contenedorPequeño.length - 1] += e;
                         }
                         contenedorMonedas.shift();//elimina el elemento que se envio al contpequeño       
                 });
