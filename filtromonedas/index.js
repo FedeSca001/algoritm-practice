@@ -38,7 +38,7 @@ rl.on("line", (w) => {
                 let contenedorPequeño = [0];
                 contenedorMonedas.sort(function (a, b) {return a - b;}).reverse() //ordeno el array de mas a menos
                 .forEach(e => {
-                        if (contenedorPequeño[contenedorPequeño.length - 1] += e < 5) {
+                        if ((contenedorPequeño[contenedorPequeño.length - 1] += e) > 5) {
                                 console.log('hacer push a contpequeño -- sumar elemnto mas contpequeño[ultimo]');
                                 contenedorPequeño.push(0)
                                 contenedorPequeño[contenedorPequeño.length - 1] += e;
