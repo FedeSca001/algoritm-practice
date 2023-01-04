@@ -45,17 +45,17 @@ Produccion: 6
 
 const readLine = require('readline').createInterface({
     input: process.stdin,
-    output: process.stdout,
-});
- 
+    output: process.stdout,});
+
 const input = [];
 let n = false;
 readLine.on('line', 
-  (w) => {
-          if (n == false) {
-                  n = Number(w);
-                  return;
-          }
-          console.log(w)
+        (w) => {if (n == false){n = Number(w);return;}//n es el valor del caracter ingresado
+                input.push(n)//Agrega el valor ingresado al array de input
+                if (n >= 2 && n <= 1000) {
+                        console.log('hacer la logica aca');
+                } else {
+                        console.log('ingresar bien N');
+                }
         }
   );
