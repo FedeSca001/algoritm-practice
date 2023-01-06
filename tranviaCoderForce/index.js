@@ -4,6 +4,7 @@ límite de tiempo por prueba2 segundos
 límite de memoria por prueba256 megabytes
 aporteentrada estándar
 producciónsalida estándar
+
 Linear Kingdom tiene exactamente una línea de tranvía.
 Tiene n paradas, numeradas del 1 al n en el orden de circulación del tranvía.
 En la i -ésima parada , los pasajeros i salen del tranvía, mientras que los pasajeros 
@@ -40,22 +41,22 @@ Inputs ejemplo:
 4 0
 
 Produccion: 6
-
 */
 
-const readLine = require('readline').createInterface({
-    input: process.stdin,
-    output: process.stdout,});
-
+const readLine = require('readline').createInterface({input: process.stdin,output: process.stdout,});
 const input = [];
 let n = false;
 readLine.on('line', 
         (w) => {if (n == false){n = Number(w);return;}//n es el valor del caracter ingresado
-                input.push(n)//Agrega el valor ingresado al array de input
-                if (n >= 2 && n <= 1000) {
-                        console.log('hacer la logica aca');
-                } else {
-                        console.log('ingresar bien N');
+                input.push(w)//Agrega el valor ingresado al array de input
+                if (input.length == n && (n >= 2 && n <= 100)) {
+                        for (let index = 0; index < input.length; index++) {
+                                const element = input[index];
+                                let subePasajero = element[0];
+                                let bajaPasajer = element[2];
+                                console.log('Suben  ',subePasajero,'--Bajan   ',bajaPasajer);
+                        }
+                        console.log('hacer la logica aca',w,'-- Valor de n :',n);
                 }
         }
   );
