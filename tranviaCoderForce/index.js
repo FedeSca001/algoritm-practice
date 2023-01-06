@@ -8,7 +8,7 @@ producciónsalida estándar
 Linear Kingdom tiene exactamente una línea de tranvía.
 Tiene n paradas, numeradas del 1 al n en el orden de circulación del tranvía.
 En la i -ésima parada , los pasajeros i salen del tranvía, mientras que los pasajeros 
-b i entran en él. El tranvía está vacío antes de llegar a la primera parada. Además, 
+b i entran en él. El tranvía está vacío antes de llegar a la primera parada. Además,
 cuando el tranvía llega a la última parada, todos los pasajeros salen para que quede vacío.
 
 Tu tarea es calcular la capacidad mínima del tranvía de modo que el número de personas 
@@ -46,17 +46,22 @@ Produccion: 6
 const readLine = require('readline').createInterface({input: process.stdin,output: process.stdout,});
 const input = [];
 let n = false;
-readLine.on('line', 
+readLine.on('line',
         (w) => {if (n == false){n = Number(w);return;}//n es el valor del caracter ingresado
                 input.push(w)//Agrega el valor ingresado al array de input
-                if (input.length == n && (n >= 2 && n <= 100)) {
-                        for (let index = 0; index < input.length; index++) {
-                                const element = input[index];
-                                let subePasajero = element[0];
-                                let bajaPasajer = element[2];
-                                console.log('Suben  ',subePasajero,'--Bajan   ',bajaPasajer);
+                if (input.length == n) {
+                        let maximo = 0;
+                        let sumaPasajeros = 0;
+                        for (let i = 0; i < input.length; i++) {
+                                let separacionArray = input[i].split(' ');
+                                let subePasajero = Number(separacionArray[1]);
+                                let bajaPasajero = Number(separacionArray[0]);
+                                sumaPasajeros += (subePasajero - bajaPasajero);
+                                if (sumaPasajeros > maximo) {
+                                        maximo = sumaPasajeros;
+                                }
                         }
-                        console.log('hacer la logica aca',w,'-- Valor de n :',n);
+                        console.log(maximo);
                 }
         }
   );
