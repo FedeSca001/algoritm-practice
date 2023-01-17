@@ -9,19 +9,17 @@ let input = '';
 readLine.on('line',
     (w) => {
         input = w;
-        let contadorJugadores = 0;
+        let contadorJugadores = 1;
         let respuesta = 'NO'
-        for (let i = 0; i < input.length; i++) {
+        for (let i = 1; i < input.length; i++) {
             const element = Number(input[i]);
-            if (contadorJugadores < 7) {
-                if (element === Number(input[i+1])) {
-                    contadorJugadores += 1;
-                } else {
-                    contadorJugadores = 0;
-                }
+            if (element === Number(input[i-1])) {
+                contadorJugadores += 1;
             } else {
-                respuesta = 'YES'
+                contadorJugadores = 1;
             }
+            if(contadorJugadores >= 7) 
+                respuesta = 'YES'
         }
         console.log(respuesta);
     }
