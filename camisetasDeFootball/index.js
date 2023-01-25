@@ -12,6 +12,7 @@ readLine.on('line',
                         let string = 'Cadena'
                     console.log(numer,array,string)
                     process.exit();
+                    
                 }
         }
   );
