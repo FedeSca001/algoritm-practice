@@ -2,13 +2,9 @@
 
 process.stdin.on('data',
     (input) => {
-        const [k,n,w] = String(input).split(' ')
-        /*for (let i = 0; i <= w; i++) {
-            k = k + (k*i);
-            contadorAPagar += k;
-            console.log(contadorAPagar/2);
-        }*/
-        console.log(k,n,w);});
+        const [k,n,w] = String(input).split(' ').map(Number);
+        const costo = k*w*(w+1)/2;
+        console.log(Math.max(costo - n, 0));});
 
 /*  process.stdin.on('data', input => {
   const [k, n, w] = String(input).split(' ').map(Number)
