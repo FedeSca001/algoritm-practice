@@ -7,12 +7,9 @@ readLine.on('line',
         (w) => {if (n == false){n = Number(w);return;}//n es el valor del caracter ingresado
                 input.push(w)//Agrega el valor ingresado al array de input
                 if (input.length == n) {
-                        let numer = 0;
-                        let array = [0,1,2]
-                        let string = 'Cadena'
-                    console.log(numer,array,string)
+                        const [a,b] = input.split(' ');
+                        console.log(a,b);
                     process.exit();
-                    
                 }
         }
   );
