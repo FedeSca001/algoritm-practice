@@ -52,7 +52,7 @@ readLine.on('line',
             if (!isInList) listLetras.push({"letra":element,"cant":1})
             }
         }
-        console.log(listLetras);
+        //console.log(listLetras);
         //Calcular cual es la letra que mas aparece
         console.log('   ---    ');
         for (let ind = 1; ind < listLetras.length; ind++) {
@@ -62,6 +62,7 @@ readLine.on('line',
             }
         }
         console.log('Cantidad máxima:   -',cantidadMaxima);
+        console.log('La letra que más aparece es:',cantidadMaxima.letra,'   -',cantidadMaxima.cant,'-veces');
         console.log('   ---    ');
         readLine.close();
     }
