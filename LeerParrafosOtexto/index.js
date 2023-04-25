@@ -1,37 +1,3 @@
-/*const readLine = require('readline').createInterface({input: process.stdin,output: process.stdout,});
-
-const contadorDeLetras = (valorInput,textInput)=>{
-        let contadorLetra = 0;
-        for (let i = 0; i < textInput.length; i++) {
-            const ele = textInput[i];
-            if (ele === valorInput) contadorLetra ++
-        }
-        listLetras.push({"letra":valorInput,"cant":contadorLetra})
-}
-
-let listLetras = []
-
-readLine.on('line',
-    (line) =>{
-        for (let i = 0; i < line.length; i++) {
-            const element = line[i];
-            if (element !== ' ') {
-                let isInList = false
-                for (let indx = 0; indx < listLetras.length; indx++) {
-                    const eleMent = listLetras[indx];
-                    if (eleMent.letra === element) {
-                        isInList = true
-                    }
-                }
-                if (!isInList) contadorDeLetras(element,line)
-            }
-        }
-        console.log(listLetras);
-        readLine.close();
-    }
-  );*/
-
-
 const readLine = require('readline').createInterface({input: process.stdin,output: process.stdout,});
 
 let listLetras = []
@@ -70,14 +36,16 @@ readLine.on('line',
         //Calcular Top five
         let topFive = [{"letra":'',"cant":0}];
         let n = 0;
-        while (n<6) {
+        while (n<5) {
             n++
+            let addElement = {}
             for (let ind = 0; ind < listLetras.length; ind++) {
                 const e = listLetras[ind];
                 if (e.cant > topFive[topFive.length-1].cant) {
-                    topFive[topFive.length-1] = e
+                    addElement = e
                 }
             }
+            topFive.push(addElement)
         }
         console.log(topFive);
 
