@@ -35,7 +35,7 @@ readLine.on('line',
 const readLine = require('readline').createInterface({input: process.stdin,output: process.stdout,});
 
 let listLetras = []
-let cantidadMaxima = {"letra":'',"cant":0};
+
 readLine.on('line',
     (line) =>{
         for (let i = 0; i < line.length; i++) {
@@ -55,15 +55,32 @@ readLine.on('line',
         //console.log(listLetras);
         //Calcular cual es la letra que mas aparece
         console.log('   ---    ');
-        for (let ind = 1; ind < listLetras.length; ind++) {
+/*
+        let cantidadMaxima = {"letra":'',"cant":0};
+
+        for (let ind = 0; ind < listLetras.length; ind++) {
             const el = listLetras[ind];
-            if (el.cant > listLetras[ind-1].cant && el.cant > cantidadMaxima.cant) {
+            if (el.cant > cantidadMaxima.cant) {
                 cantidadMaxima = el
             }
         }
-        console.log('Cantidad máxima:   -',cantidadMaxima);
         console.log('La letra que más aparece es:',cantidadMaxima.letra,'   -',cantidadMaxima.cant,'-veces');
-        console.log('   ---    ');
+        
+*/
+        //Calcular Top five
+        let topFive = [{"letra":'',"cant":0}];
+        let n = 0;
+        while (n<6) {
+            n++
+            for (let ind = 0; ind < listLetras.length; ind++) {
+                const e = listLetras[ind];
+                if (e.cant > topFive[topFive.length-1].cant) {
+                    topFive[topFive.length-1] = e
+                }
+            }
+        }
+        console.log(topFive);
+
         readLine.close();
     }
   );
