@@ -1,4 +1,4 @@
-const request = require('request');
+/*const request = require('request');
 const cheerio = require('cheerio');
 
 // URL de la página web que se va a leer
@@ -9,9 +9,9 @@ request(url, (error, response, body) => {
   if (!error && response.statusCode == 200) {
     const $ = cheerio.load(body);
     $('a').each((i, el) => {
-      console.log(el,i);
+      console.log(i);
     });
   } else {
-    console.log('error',error);
+    console.log(error);
   }
-});
+});*/
