@@ -21,9 +21,8 @@ readLine.on('line',
         //console.log(listLetras);
         //Calcular cual es la letra que mas aparece
         console.log('   ---    ');
-
+        
         let cantidadMaxima = {"letra":'',"cant":0};
-
         for (let ind = 0; ind < listLetras.length; ind++) {
             const el = listLetras[ind];
             if (el.cant > cantidadMaxima.cant) {
@@ -32,7 +31,6 @@ readLine.on('line',
         }
         console.log('La letra que más aparece es:',cantidadMaxima.letra,'   -',cantidadMaxima.cant,'-veces');
         
-
         //Calcular Top five
 /*        let topFive = [{"letra":'',"cant":0}];
         let n = 0;
@@ -46,9 +44,10 @@ readLine.on('line',
                 }
             }
             topFive.push(addElement)
-        }*/
-        //console.log(topFive);
-
-        readLine.close();
+        }
+        console.log(topFive);
+*/
+       // readLine.close();
+       console.log(listLetras);
     }
   );
