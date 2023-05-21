@@ -1,9 +1,18 @@
 const readLine = require('readline').createInterface({input: process.stdin,output: process.stdout,});
+const { performance } = require('perf_hooks');
 
 let listLetras = []
 
+
+
+// Tu código a medir aquí
+const end = performance.now();
+
+
+
 readLine.on('line',
     (line) =>{
+        const start = performance.now();//Inicia a medir el tiempo
         for (let i = 0; i < line.length; i++) {
             const element = line[i].toLowerCase();
             let isInList = false
@@ -18,7 +27,7 @@ readLine.on('line',
             if (!isInList) listLetras.push({"letra":element,"cant":1})
             }
         }
-        //console.log(listLetras);
+
         //Calcular cual es la letra que mas aparece
         console.log('   ---    ');
         
@@ -32,7 +41,7 @@ readLine.on('line',
         console.log('La letra que más aparece es:',cantidadMaxima.letra,'   -',cantidadMaxima.cant,'-veces');
         
         //Calcular Top five
-/*        let topFive = [{"letra":'',"cant":0}];
+        let topFive = [{"letra":'',"cant":0}];
         let n = 0;
         while (n<5) {
             n++
@@ -46,8 +55,9 @@ readLine.on('line',
             topFive.push(addElement)
         }
         console.log(topFive);
-*/
+
        // readLine.close();
-       console.log(listLetras);
+       const end = performance.now();
+       console.log('Tiempo transcurrido:', end - start, 'ms');
     }
   );
