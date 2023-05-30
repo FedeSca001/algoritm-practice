@@ -1,27 +1,25 @@
-const axios = require('axios');
-const cheerio = require('cheerio');
+import express from "express"
+import * as cheerio from "cheerio"
+import axios from "axios"
+const PORT = process.env.PORT || 5000
 
-// URL de la página que deseas hacer scraping
-const url = 'https://www.linkedin.com/in/federico-scarpecci-developer/';
+const app = express()
+const url = "https://www.cronista.com/MercadosOnline/dolar.html"
 
-// Realizar la solicitud HTTP a la página
-axios.get(url)
-  .then(response => {
-    // Cargar el HTML de la respuesta utilizando Cheerio
-    const $ = cheerio.load(response.data);
-    
-    // Filtrar y obtener solo el contenido de texto de la página
-    const textContent = $('body')
-      .contents()
-      .filter(function() {
-        return this.type === 'text';
-      })
-      .text()
-      .trim();
-    
-    // Imprimir el contenido de texto
-    console.log('Contenido de texto de la página:', textContent);
-  })
-  .catch(error => {
-    console.error('Error al realizar la solicitud HTTP:', error);
-  });
+app.get("/", async (req,res)=>{
+  try {
+    const {data} = await axios.get(url)
+    const $ = cheerio.load(data)
+    const selectorDolarBlue = "#market-scrll-1 > li:nth-child(1) > a > span.value"
+    const selectorDolarBNA = "#market-scrll-1 > li:nth-child(2) > a > span.value"
+    const selectorDolarTarjeta = "#market-scrll-1 > li:nth-child(4) > a > span.value"
+    res.json({
+      precioDolarBlue: $(selectorDolarBlue).text(),
+      precioDolarBNA: $(selectorDolarBNA).text(),
+      precioDolarTarjeta: $(selectorDolarTarjeta).text()
+    })
+  } catch (error) {
+    res.json({error})
+  }
+})
+app.listen(PORT, ()=> console.log('Haciendo scraping'))
