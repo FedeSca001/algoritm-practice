@@ -24,3 +24,28 @@ rl.on('line', (input) => {
   console.log(problemasAresolver);
 });
 
+/*
+CALCULAR LA VARIABLE "tiempoTotalProblemas" SIN EL FOR
+const readline = require('readline');
+
+const rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout,
+});
+
+rl.on('line', (input) => {
+  const [problemas, minutosNecesarios] = input.split(' ');
+  const tiempoDisponible = 240 - Number(minutosNecesarios);
+  const tiempoTotalProblemas = (Number(problemas) * (5 + (Number(problemas) * 5))) / 2;
+  let problemasAresolver = 0;
+
+  if (tiempoDisponible >= tiempoTotalProblemas) {
+    problemasAresolver = Number(problemas);
+  } else {
+    problemasAresolver = Math.floor(tiempoDisponible / 5);
+  }
+
+  console.log(problemasAresolver);
+});
+
+*/
