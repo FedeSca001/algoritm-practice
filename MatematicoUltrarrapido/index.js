@@ -1,7 +1,4 @@
 // https://codeforces.com/problemset/problem/61/A
-
-const { rawListeners } = require('process');
-
 const readLine = require('readline').createInterface({input: process.stdin,output: process.stdout,});
 const input = [];
 let n1 = false;
