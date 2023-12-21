@@ -9,6 +9,7 @@ readLine.on('line',
             n = Number(w);
             return;
         }
+        
             let sumaA = 0
             let sumaB = 0
             for (let index = 0; index < w.length; index++) {
