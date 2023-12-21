@@ -4,6 +4,7 @@ const readLine = require('readline').createInterface({input: process.stdin,outpu
 let habitaciones = []
 let n = false
 let contador = 0;
+
 readLine.on('line',
     (w) => {
         if (n === false) {
