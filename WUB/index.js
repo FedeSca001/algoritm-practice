@@ -4,10 +4,8 @@ const readline = require('readline').createInterface({
     output: process.stdout
 });
 
-let input = '';
-
 readline.on('line', (line) => {
-    input = line.split('WUB').filter(word => word !== '');
+    const input = line.split('WUB').filter(word => word !== '');
     const result = input.join(' ')
     console.log(result);
     readline.close();
