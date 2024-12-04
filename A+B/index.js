@@ -1,4 +1,5 @@
 // https://codeforces.com/problemset/problem/1772/A
+// Desde raspberry pi 5
 
 const readline = require('readline').createInterface({
     input: process.stdin,

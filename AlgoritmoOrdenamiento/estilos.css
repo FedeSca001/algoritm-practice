@@ -1,0 +1,49 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.contenedor-input {
+    margin-bottom: 20px;
+}
+
+.input-number {
+    padding: 5px;
+    margin-right: 10px;
+}
+
+.add-number {
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.add-number:hover {
+    background-color: #0056b3;
+}
+
+.contenedor-ordenar {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.ul-ordenados {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.ul-ordenados li {
+    flex: 1 0 calc(10% - 10px);
+    background-color: #b3b3b3;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+}
