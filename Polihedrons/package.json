@@ -1,0 +1,14 @@
+{
+  "name": "polihedrons",
+  "version": "0.0.1",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [
+    "polihedros"
+  ],
+  "author": "FedeSca001",
+  "license": "ISC",
+  "description": ""
+}
