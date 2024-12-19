@@ -1,0 +1,11 @@
+{
+  "name": "tecladolineal",
+  "version": "0.0.1",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "FedeSca001",
+  "license": "ISC",
+  "description": ""
+}
